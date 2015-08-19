@@ -1,0 +1,20 @@
+<html lang="tr">
+<div th:fragment="content">
+
+
+<div class="form-group">
+<form action="#" th:action="@{/course/create}" th:object="${course}" method="post">
+<div class="col-md-3">
+    <p><b>Name:           <b><input type="text" class="form-control" placeholder="" th:field="*{name}"  th:value="*{name}"/></p></b>
+    <p><b>Description:</b><b><input type="text" class="form-control" placeholder=""  th:field="*{description}" th:value="*{description}" /></p></b>
+    <p><b>Prerequisites:</b>       <b><input type="text" class="form-control" placeholder=""  th:field="*{prerequisites}"  th:value="*{prerequisites}"/></p></b>
+     <p><b>detailPagelink:</b>       <b><input type="text" class="form-control" placeholder=""  th:field="*{detailPagelink}" th:value="*{detailPagelink}" /></p></b>
+      
+    <p><b><input type="submit" class="btn btn-primary" value="Submit" /></p></b>
+    </div>
+</form>
+</div>
+
+
+</div>
+</html>

@@ -1,0 +1,68 @@
+<html lang="tr">
+<div th:fragment="content">
+
+
+	<div class="form-group">
+		<form action="#" th:action="@{/instructor/create}"
+			th:object="${instructor}" method="post">
+			<div class="col-md-3">
+				<p>
+					<b>Name: <b><input type="text" class="form-control"
+							placeholder="örn:Zülfü" th:field="*{name}" th:value="*{name}" />
+				</p>
+				</b>
+				<p>
+					<b>Surname: </b><b><input type="text" class="form-control"
+						placeholder="örn:Yýlmaz" th:field="*{surname}"
+						th:value="*{surname}" />
+				</p>
+				</b>
+				<p>
+					<b>Birth Date: </b> <b><input type="number"
+						class="form-control" placeholder="1990" th:field="*{birthDate}"
+						th:value="*{birthDate}" />
+				</p>
+				</b>
+				<p>
+					<b>TCKN:</b> <b><input type="number" class="form-control"
+						placeholder="örn:22222222222" th:field="*{tckn}"
+						th:value="*{tckn}" />
+				</p>
+				</b>
+				<p>
+					<b>E-mail:</b> <b><input type="text" class="form-control"
+						placeholder="örn:yýlmazzulfu@gmail.com" th:field="*{email}"
+						th:value="*{email}" />
+				</p>
+				</b>
+				<p>
+					<b>Password:</b> <b><input type="text" class="form-control"
+						placeholder="örn:asd123" th:field="*{password}"
+						th:value="*{password}" />
+				</p>
+				</b>
+				<p>
+					<b>Phone:</b> <b><input type="number" class="form-control"
+						placeholder="(05XX)XXXXXXX" th:field="*{phone}"
+						th:value="*{phone}" />
+				</p>
+				</b>
+				<p>
+					<b>Courses:</b>
+				<div class="form-group">
+					<select multiple name="courseIds" class="form-control"><option
+							th:each=" courses: ${courses}" th:value="${courses.id}"
+							th:text="${courses.name}">Courses</option></select>
+				</div>
+
+				<p>
+					<b><input type="submit" class="btn btn-primary" value="Submit" />
+				</p>
+				</b>
+			</div>
+		</form>
+	</div>
+
+
+</div>
+</html>

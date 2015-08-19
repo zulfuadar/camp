@@ -1,0 +1,30 @@
+<html lang="tr">
+<th:block th:fragment="content">
+	<div class="form-group">
+		<form action="#" th:action="@{/course/update}" th:object="${course}"
+			method="post">
+			<div class="col-md-3">
+				<p>
+					<input type="hidden" class="form-control" placeholder="Name"
+						th:field="*{id}" th:value="*{id}" />
+				</p>
+			
+				<p>
+					<input type="text" class="form-control" placeholder="Name"
+						th:field="*{description}" th:value="*{description}" />
+				</p>
+					<p>
+					<input type="text" class="form-control" placeholder="Name"
+						th:field="*{prerequisites}" th:value="*{prerequisites}" />
+				</p>
+					<p>
+					<input type="text" class="form-control" placeholder="Name"
+						th:field="*{detailPagelink}" th:value="*{detailPagelink}" />
+				</p>
+				<input type="submit" class="btn btn-primary" value="Submit" /> <input
+					type="reset" class="btn btn-primary" value="Reset" />
+			</div>
+		</form>
+	</div>
+	</th>
+</html>

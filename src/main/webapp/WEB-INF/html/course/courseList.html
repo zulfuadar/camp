@@ -1,0 +1,44 @@
+
+<html lang="tr">
+<div th:fragment="content">
+<div class="container">
+		<div class="text-center"><h1>courses</h1></div>
+		<br>
+
+		<table class="table table-hover">
+			<thead>
+				<th>ID</th>
+				<th>Name</th>
+			    <th>description</th>
+			    <th>prerequisites</th>
+			    <th>detailPagelink</th>
+
+			</thead>
+			<tbody>
+				<tr th:each="course : ${courseList}">
+
+					<td th:text="${course.id}"></td>
+
+					<td th:text="${course.name}"></td>
+
+					<td th:text="${course.description}"></td>
+
+					<td th:text="${course.prerequisites}"></td>
+
+					<td th:text="${course.detailPagelink}"></td>
+
+					<td>
+						<!-- <form action="#" th:action="@{/course/edit/__*{id}__}" >
+							<button name="id" value="${course.id}" th:value="${course.id}"
+								class="btn btn-primary">Edit</button>
+						</form> -->
+						<a th:href="@{/course/edit/__${course.id}__}" class="btn btn-primary">Edit</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+</div>
+</html>
